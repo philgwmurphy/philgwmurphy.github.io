@@ -3,28 +3,40 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Full-Screen Responsive Map</title>
+    <title>Map Comparisons</title>
     <style>
-        /* Reset margin and padding for the body and html to remove default browser spacing */
         body, html {
             margin: 0;
             padding: 0;
-            height: 100%; /* Make sure the body takes the full height of the viewport */
-            width: 100%; /* Make sure the body takes the full width of the viewport */
+            height: 100%;
+            width: 100%;
         }
-
-        /* Make the iframe responsive, taking up the full screen */
+        .iframe-container {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 100vh; /* Adjust the height as necessary */
+        }
         iframe {
-            height: 100vh; /* 100% of the viewport height */
-            width: 100vw; /* 100% of the viewport width */
-            border: none; /* Optional: removes the border around the iframe */
-            display: block; /* Remove default inline-frame spacing */
+            border: none; /* Removes the border around the iframe */
         }
     </style>
 </head>
 <body>
-    <iframe 
-        src="https://api.maptiler.com/tiles/9e1f80a2-d6ae-4248-9e2e-341ac66350e3/?key=7GmOK7a4Ei5hcbBGeOTf#12.0/45.61403/-80.55176">
-    </iframe>
+    <div class="iframe-container">
+        <!-- Maptiler Map -->
+        <iframe 
+            width="500" 
+            height="300" 
+            src="https://api.maptiler.com/tiles/20866ba7-29a8-428f-b18b-40d9e82465c6/?key=7GmOK7a4Ei5hcbBGeOTf#12.0/45.61403/-80.55176">
+        </iframe>
+        
+        <!-- OpenStreetMap -->
+        <iframe 
+            width="500" 
+            height="300" 
+            src="https://www.openstreetmap.org/export/embed.html?bbox=-80.57175540924072%2C45.59896133543846%2C-80.53176879882812%2C45.62909205619308&amp;layer=mapnik">
+        </iframe>
+    </div>
 </body>
 </html>
